@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+
+<body>
+<div class="container">
+<table class="table table-hover">
+  <thaed>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Username</th>
+    <th>password</th>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td>{{row["first_name"]}}</td>
+      <td>{{row["last_name"]}}</td>
+      <td>{{row["gender"]}}</td>
+      <td>{{row["email"]}}</td>
+      <td>{{row["username"]}}</td>
+      <td>{{row["password"]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+
+{% include 'footer.html' %}
