@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+<body>
+  <div class="container">
+      <div class="header">
+          <nav>
+              <ul class="nav nav-pills pull-right">
+                  <li role="presentation" ><a href="carlist">Carlist</a>
+                  </li>
+                  <li role="presentation" ><a href="insertcar">Input Cars</a>
+                  </li>
+                  <li role="presentation" ><a href="updatecar">Update Cars</a>
+                  </li>
+                  <li role="presentation" ><a href="delete">Delete Cars</a>
+                  </li>
+
+              </ul>
+          </nav>
+          <h3 class="text-muted">Deler Mobil</h3>
+      </div>
+
+<div class="container">
+<form action="{{url_for('godelete') }}" method = "POST">
+
+    <h3> DELETE CAR </h3>
+
+      Car ID to be delete<br>
+      <select name="idcar" class="from-control">
+        {% for row in rows %}
+         <option name="idcar" value={{row.0}}>{{row.0}}</option>
+        {% endfor %}
+      </select>
+
+      <br>
+
+
+      <input type="submit" value="submit"/><br>
+</form>
+</div>
+
+</body>
+</html>

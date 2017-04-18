@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+
+<body>
+
+      <div class="container">
+          <div class="header">
+              <nav>
+                  <ul class="nav nav-pills pull-right">
+                      <li role="presentation" ><a href="carlist">Carlist</a>
+                      </li>
+                      <li role="presentation" ><a href="insertcar">Input Cars</a>
+                      </li>
+                      <li role="presentation" ><a href="updatecar">Update Cars</a>
+                      </li>
+                      <li role="presentation" ><a href="delete">Delete Cars</a>
+                      </li>
+
+                  </ul>
+              </nav>
+              <h3 class="text-muted">Deler Mobil</h3>
+          </div>
+          
+<div class="container">
+<form action="{{url_for('saveupdate') }}" method = "POST">
+
+    <h3> Udate Car </h3>
+
+      ID<br>
+      <select class="from-control">
+        {% for row in rows %}
+         <option name="idselect" value="{{row["id"]}}">{{row.0}}</option>
+        {% endfor %}
+      </select>
+
+      <br>
+      Id<br>
+      <input type="text" name="idcar" size=27/><br>
+
+      NAMA<br>
+      <input type="text" name="namecar" size=27/><br>
+
+      HARGA<br>
+      <input type="text" name="pricecar" size=27/><br>
+
+      <input type="submit" value="submit"/><br>
+</form>
+</div>
+
+</body>
+</html>
